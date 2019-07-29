@@ -14,6 +14,7 @@
 		E132A92922EB6231009BB210 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E132A92722EB6231009BB210 /* LaunchScreen.storyboard */; };
 		E132A93422EB6232009BB210 /* BookCricketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A93322EB6232009BB210 /* BookCricketTests.swift */; };
 		E132A93F22EB6232009BB210 /* BookCricketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A93E22EB6232009BB210 /* BookCricketUITests.swift */; };
+		E132A94D22EB6C48009BB210 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A94C22EB6C48009BB210 /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E132A93A22EB6232009BB210 /* BookCricketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookCricketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E132A93E22EB6232009BB210 /* BookCricketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCricketUITests.swift; sourceTree = "<group>"; };
 		E132A94022EB6232009BB210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E132A94C22EB6C48009BB210 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				E132A91E22EB6231009BB210 /* AppDelegate.swift */,
 				E132A92022EB6231009BB210 /* ViewController.swift */,
 				E132A92222EB6231009BB210 /* Main.storyboard */,
+				E132A94C22EB6C48009BB210 /* ViewController2.swift */,
 				E132A92522EB6231009BB210 /* Assets.xcassets */,
 				E132A92722EB6231009BB210 /* LaunchScreen.storyboard */,
 				E132A92A22EB6231009BB210 /* Info.plist */,
@@ -258,6 +261,7 @@
 			files = (
 				E132A92122EB6231009BB210 /* ViewController.swift in Sources */,
 				E132A91F22EB6231009BB210 /* AppDelegate.swift in Sources */,
+				E132A94D22EB6C48009BB210 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR9UD8DMN8;
 				INFOPLIST_FILE = BookCricket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CR9UD8DMN8;
 				INFOPLIST_FILE = BookCricket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
