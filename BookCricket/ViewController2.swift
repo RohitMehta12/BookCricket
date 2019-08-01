@@ -80,7 +80,7 @@ class ViewController2: UIViewController {
         runsLabel.text = "\(score)"
         wicketsLabel.text = "\(wickets)"
         if wickets == 10 {
-            endingLabel.text = "Your innings is over and your final score is \(score)"
+            endingLabel.text = "Your final score is \(score). Well played!"
             //Remove turn to page button, reinstate with a return to home page button
             turnToRandomPage.isHidden = true
             returnButton.isHidden = false
