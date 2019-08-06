@@ -12,46 +12,112 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     
-@IBOutlet weak var numberOfPages: UITextField!
+    @IBOutlet weak var numberOfPages: UITextField!
+    @IBOutlet weak var teamButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
-override func viewDidLoad() {
+    var teamList = ["India", "England", "Australia", "New Zealand", "South Africa", "Pakistan", "Bangladesh", "Sri Lanka", "West Indies", "Afghanistan"]
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tableView.isHidden = true
         // Handle the text field’s user input through delegate callbacks.
         numberOfPages.delegate = self
+    }
     
-}
-    
-//MARK: UITextFieldDelegate
-func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    // Hide the keyboard.
-    textField.resignFirstResponder()
-    return true
-}
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
 
-func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
     //Save number entered and then randomly select a number within bounds
-}
+    }
 
 
 //MARK: Actions
     
-//prepareforsegue to transfer upperBound to ViewController2
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //make sure some number is entered
-    if numberOfPages.text == ""{
-        print("Please enter number")
-        return
-    }
-    //declare variable for upper bound
-    let upperBound: Int? = Int(numberOfPages.text ?? "0")
+    //prepareforsegue to transfer upperBound to ViewController2
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //make sure some number is entered
+        if ((numberOfPages.text ?? "").isEmpty) {
+            print("Please enter number")
+            return
+            //fix this, print only returns in the command line, not to the user. Also add verification that team has been selected
+        }
+        //declare variable for upper bound
+        let upperBound: Int? = Int(numberOfPages.text ?? "0")
     
-    if upperBound != 0 {
-        if segue.identifier == "segue1" {
-            let destinationViewController = segue.destination as! ViewController2
-            destinationViewController.upperBound = upperBound
+        if upperBound != 0 {
+            if segue.identifier == "segue1" {
+                let destinationViewController = segue.destination as! ViewController2
+                destinationViewController.upperBound = upperBound
+            }
         }
     }
-}
+    
+    //clicking team button to reveal teams
+    @IBAction func onClickDropButton(_ sender: Any) {
+        if tableView.isHidden {
+            animate(toggle: true)
+        }
+        else {
+            animate(toggle: false)
+        }
+    }
+    
+    func animate(toggle: Bool) {
+        if toggle {
+            UIView.animate(withDuration: 0.3) {
+                self.tableView.isHidden = false
+            }
+        }
+        else {
+            UIView.animate(withDuration: 0.3) {
+                self.tableView.isHidden = true
+            }
+        }
+    }
     
 }
+
+//for the table of teams
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return teamList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
+        cell.textLabel?.text = teamList[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        teamButton.setTitle("\(teamList[indexPath.row])", for: .normal)
+        animate(toggle: false)
+    }
+    
+}
+/*
+ 1. in viewcontroller1 and 3, option to choose team (from scroller)
+ 2. load to viewcontroller 2 or 4
+ 3. 1 more random number (1-20) is generated each time "turn to page" is clicked
+ 4. if out, 2nd rand # comes into play
+ 
+ BIASES FOR EACH TEAM: (when to roll 1st random # again)
+ England: #>10
+ India: #>10
+ Australia: #>11
+ New Zealand: #>12
+ South Africa: #>13
+ Pakistan: #>14
+ Bangladesh: #>15
+ Sri Lanka: #>16
+ West Indies: #>17
+ Afghanistan: #>18
+ 
+ */
