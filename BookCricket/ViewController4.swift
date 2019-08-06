@@ -38,9 +38,6 @@ class ViewController4: UIViewController {
     //"Score" label
     @IBOutlet weak var theScore2: UILabel!
     
-    //button to go back to home page
-    @IBOutlet weak var returnButton: UIButton!
-    
     var upperBound: Int?
 
     override func viewDidLoad() {
@@ -52,7 +49,6 @@ class ViewController4: UIViewController {
         turnToRandomPage2.addTarget(self, action: #selector(roller2), for: .touchUpInside)
         randomLabel1.text = ""
         randomLabel2.text = ""
-        returnButton.isHidden = true
     }
     
 
@@ -66,7 +62,7 @@ class ViewController4: UIViewController {
     }
     */
     
-    //Mark: Actions
+    //MARK: Actions
     var digit1: Int = 0
     var score1: Int = 0
     var wickets1: Int = 0
@@ -75,9 +71,10 @@ class ViewController4: UIViewController {
     var score2: Int = 0
     var wickets2: Int = 0
     
-    var wicketChecker: Int = 0
+    var winningScore:Int = 0
+    var wicketCheckerCount: Int = 0
     
-    
+    //MARK: Player 1 logic
     @objc func roller1(_ sender: UIButton) {
         //Generate random number
         //if you can get a random number in range [a, b] then all you have to do is get a random number in the range [(a+1)/2, b/2] and multiply it by 2 to get a random even number in range [a, b]
@@ -111,15 +108,14 @@ class ViewController4: UIViewController {
             turnToRandomPage1.isHidden = true
             //change 'score' to 'final score'
             theScore1.text = "Final Score"
-            wicketChecker += 1
-            if wicketChecker == 2 {
-                returnButton.isHidden = false
-            }
+            wicketCheckerCount += 1
+            wicketChecker()
         }
         else {
             return
         }
     }
+    //MARK: Player 2 logic
     @objc func roller2(_ sender: UIButton) {
         //Generate random number
         //if you can get a random number in range [a, b] then all you have to do is get a random number in the range [(a+1)/2, b/2] and multiply it by 2 to get a random even number in range [a, b]
@@ -153,15 +149,25 @@ class ViewController4: UIViewController {
             turnToRandomPage2.isHidden = true
             //change 'score' to 'final score'
             theScore2.text = "Final Score"
-            wicketChecker += 1
-            if wicketChecker == 2 {
-                returnButton.isHidden = false
-            }
+            wicketCheckerCount += 1
+            wicketChecker()
         }
         else {
             return
         }
     }
+    func wicketChecker() {
+        if wicketCheckerCount == 2 {
+            //transit to final page
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EndViewController") as! EndViewController
+            winningScore = max(score1, score2)
+            vc.scoreData = "\(winningScore)"
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
 
 }
-//add functionality for displaying winner
+//add to the functionality for displaying winner
+//add functionality to select team (preset team of 11). Start out with showing who two are batting, show best partnerships at the end. Table is too hard atm
+//add overs
+//FOCUS ON THIS 1ST bias: generate 1 more random #, 1-20. Check ranking of team. Eg: if team ranking is 10, if the 2nd rand # is more than 18, try one more time if out. 10% of time they will get one more chance, roll 1st random thing again
