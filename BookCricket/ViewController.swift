@@ -57,6 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 destinationViewController.upperBound = upperBound
             }
         }
+        
     }
     
     //clicking team button to reveal teams
@@ -86,23 +87,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 //for the table of teams
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teamList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
-        cell.textLabel?.text = teamList[indexPath.row]
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as? CellTableViewCell
+        cell?.teamLabel.text = teamList[indexPath.row]
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Controller2") as? ViewController2
+        vc?.name = teamList[indexPath.row]
         teamButton.setTitle("\(teamList[indexPath.row])", for: .normal)
         animate(toggle: false)
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
-    
 }
 /*
+ 
+ Fix the fact that clicking team brings it to 2nd viewcontroller and scoring doesnt work, whereas clicking start game makes scoring work but doesnt transfer team data.
  1. in viewcontroller1 and 3, option to choose team (from scroller)
  2. load to viewcontroller 2 or 4
  3. 1 more random number (1-20) is generated each time "turn to page" is clicked

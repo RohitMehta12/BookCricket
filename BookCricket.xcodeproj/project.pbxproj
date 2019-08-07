@@ -18,6 +18,7 @@
 		E132A93422EB6232009BB210 /* BookCricketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A93322EB6232009BB210 /* BookCricketTests.swift */; };
 		E132A93F22EB6232009BB210 /* BookCricketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A93E22EB6232009BB210 /* BookCricketUITests.swift */; };
 		E132A94D22EB6C48009BB210 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A94C22EB6C48009BB210 /* ViewController2.swift */; };
+		E1F93A3422FB544F0058E396 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F93A3322FB544F0058E396 /* CellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E132A93E22EB6232009BB210 /* BookCricketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCricketUITests.swift; sourceTree = "<group>"; };
 		E132A94022EB6232009BB210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E132A94C22EB6C48009BB210 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		E1F93A3322FB544F0058E396 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				E132A91E22EB6231009BB210 /* AppDelegate.swift */,
 				E132A92022EB6231009BB210 /* ViewController.swift */,
+				E1F93A3322FB544F0058E396 /* CellTableViewCell.swift */,
 				E132A92222EB6231009BB210 /* Main.storyboard */,
 				E116055122F3546200A8DADA /* ViewController4.swift */,
 				E116054F22F3542B00A8DADA /* ViewController3.swift */,
@@ -274,6 +277,7 @@
 				E116055022F3542B00A8DADA /* ViewController3.swift in Sources */,
 				E132A94D22EB6C48009BB210 /* ViewController2.swift in Sources */,
 				E116055222F3546200A8DADA /* ViewController4.swift in Sources */,
+				E1F93A3422FB544F0058E396 /* CellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

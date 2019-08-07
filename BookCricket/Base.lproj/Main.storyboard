@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLi-xJ-rzm">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPb-LH-Xlu">
-                                <rect key="frame" x="20" y="664" width="374" height="158"/>
+                                <rect key="frame" x="20" y="708" width="374" height="114"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="How to Play">
@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hVA-dS-Ohm">
-                                <rect key="frame" x="100" y="94" width="214" height="29"/>
+                                <rect key="frame" x="100" y="138" width="214" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="l0K-MA-sl5"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mY5-ZD-7E5">
-                                <rect key="frame" x="35" y="172" width="344" height="198"/>
+                                <rect key="frame" x="35" y="216" width="344" height="198"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gM-cU-NKq">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="40"/>
@@ -75,7 +75,7 @@
                                             <constraint firstAttribute="height" constant="150" id="71I-JP-Y7Q"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" textLabel="Ezv-pI-OpI" style="IBUITableViewCellStyleDefault" id="OqE-fl-OQr">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" textLabel="Ezv-pI-OpI" style="IBUITableViewCellStyleDefault" id="OqE-fl-OQr" customClass="CellTableViewCell" customModule="BookCricket" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="344" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OqE-fl-OQr" id="wBs-VG-Z11">
@@ -91,6 +91,9 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="teamLabel" destination="Ezv-pI-OpI" id="7hT-1A-mFi"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -107,7 +110,7 @@
                                 </constraints>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input number of pages in book" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vg5-iQ-V9U">
-                                <rect key="frame" x="111" y="496" width="192" height="30"/>
+                                <rect key="frame" x="111" y="540" width="192" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1qR-yd-SDp"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="zgc-NV-hqE"/>
@@ -117,7 +120,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7t-SD-Ij6">
-                                <rect key="frame" x="150" y="534" width="114" height="30"/>
+                                <rect key="frame" x="150" y="578" width="114" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dVY-Fg-4Rw"/>
                                 </constraints>
@@ -158,6 +161,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zYR-cO-hiy"/>
                     <connections>
                         <outlet property="numberOfPages" destination="Vg5-iQ-V9U" id="ho5-OQ-fjC"/>
                         <outlet property="tableView" destination="Irk-o1-Ywq" id="6Wj-lo-1S4"/>
@@ -166,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="115.84821428571428"/>
         </scene>
         <!--View Controller3-->
         <scene sceneID="oj8-y5-zg4">
@@ -221,7 +225,7 @@
                                     <segment title="Multiplayer"/>
                                 </segments>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="rfw-Qb-VSf"/>
+                                    <segue destination="mLi-xJ-rzm" kind="show" id="rfw-Qb-VSf"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -629,7 +633,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Return to Home Page"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ims-6V-obw"/>
+                                    <segue destination="mLi-xJ-rzm" kind="show" id="ims-6V-obw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qY6-iX-rmn">
@@ -640,6 +644,19 @@
                                     <action selector="roller:" destination="pux-RI-AJd" eventType="touchUpInside" id="BZ4-Jb-wZH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L97-jf-okL">
+                                <rect key="frame" x="37" y="125" width="65" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="POK-pw-fgn"/>
@@ -650,16 +667,35 @@
                         <outlet property="returnButton" destination="M4o-Cc-2FS" id="5lg-FL-6nz"/>
                         <outlet property="runsLabel" destination="W70-a6-6Ei" id="AZW-1D-wi2"/>
                         <outlet property="scoringLabel" destination="Z0Q-gn-hWh" id="n3q-Nk-Dbc"/>
+                        <outlet property="teamLabel" destination="L97-jf-okL" id="gjB-mx-3oh"/>
                         <outlet property="turnToRandomPage" destination="qY6-iX-rmn" id="BTT-qW-yxH"/>
                         <outlet property="wicketsLabel" destination="Dcm-ai-HqJ" id="5h2-TU-6Ly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tsz-Vk-9AR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.68115942028987" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1747.826086956522" y="115.84821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hvc-jB-U6T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mLi-xJ-rzm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e7a-zN-UKe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="t4f-dC-5Lq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4UG-fj-zYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rfw-Qb-VSf"/>
+        <segue reference="ims-6V-obw"/>
     </inferredMetricsTieBreakers>
 </document>

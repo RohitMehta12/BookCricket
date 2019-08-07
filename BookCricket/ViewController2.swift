@@ -23,8 +23,10 @@ class ViewController2: UIViewController {
     @IBOutlet weak var scoringLabel: UILabel!
     //button to go back to home page
     @IBOutlet weak var returnButton: UIButton!
+    @IBOutlet weak var teamLabel: UILabel!
     
     var upperBound: Int?
+    var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class ViewController2: UIViewController {
         turnToRandomPage.addTarget(self, action: #selector(roller), for: .touchUpInside)
         randomLabel.text = ""
         returnButton.isHidden = true
+        teamLabel.text = "\(name)"
     }
     
 
