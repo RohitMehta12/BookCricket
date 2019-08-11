@@ -35,7 +35,102 @@ class ViewController2: UIViewController {
         turnToRandomPage.addTarget(self, action: #selector(roller), for: .touchUpInside)
         randomLabel.text = ""
         returnButton.isHidden = true
-        teamLabel.text = "\(name)"
+        let singleTon = SingletonClass()
+        teamLabel.text = "\(singleTon.sharedInstance.dataText)"
+    }
+    
+    func assignProbabilities() -> Bool {
+        let singleTon = SingletonClass()
+        let randomNumberTwo = (Int.random(in: 0...20))
+        if "\(singleTon.sharedInstance.dataText)" == "England" {
+            if randomNumberTwo <= 10 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        else if "\(singleTon.sharedInstance.dataText)" == "India" {
+            if randomNumberTwo <= 10 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        else if "\(singleTon.sharedInstance.dataText)" == "Australia" {
+            if randomNumberTwo <= 11 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        else if "\(singleTon.sharedInstance.dataText)" == "New Zealand" {
+            if randomNumberTwo <= 12 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        else if "\(singleTon.sharedInstance.dataText)" == "South Africa" {
+            if randomNumberTwo <= 13 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        else if "\(singleTon.sharedInstance.dataText)" == "Pakistan" {
+            if randomNumberTwo <= 14 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        else if "\(singleTon.sharedInstance.dataText)" == "Bangladesh" {
+            if randomNumberTwo <= 15 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        else if "\(singleTon.sharedInstance.dataText)" == "Sri Lanka" {
+            if randomNumberTwo <= 16 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        else if "\(singleTon.sharedInstance.dataText)" == "West Indies" {
+            if randomNumberTwo <= 17 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        else if "\(singleTon.sharedInstance.dataText)" == "Afghanistan" {
+            if randomNumberTwo <= 18 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        return false
     }
     
 
@@ -62,8 +157,13 @@ class ViewController2: UIViewController {
         digit = randomNumber % 10
         
         if digit == 0 {
-            wickets = wickets + 1
-            scoringLabel.text = "OUT!"
+            if assignProbabilities() {
+                scoringLabel.text = "SURVIVES THE APPEAL! \r\n NO RUN"
+            }
+            else {
+                wickets = wickets + 1
+                scoringLabel.text = "OUT!"
+            }
         }
         else if digit == 8 {
             scoringLabel.text = "NO RUN"

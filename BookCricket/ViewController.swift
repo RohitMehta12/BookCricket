@@ -85,6 +85,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
+class SingletonClass {
+    var sharedInstance: SingletonClass {
+        struct Static {
+            static let instance = SingletonClass()
+        }
+        return Static.instance
+    }
+    var dataText : String = ""
+}
+
 //for the table of teams
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -102,28 +112,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Controller2") as? ViewController2
         vc?.name = teamList[indexPath.row]
         teamButton.setTitle("\(teamList[indexPath.row])", for: .normal)
+        let singleTon = SingletonClass()
+        singleTon.sharedInstance.dataText = "\(teamList[indexPath.row])"
         animate(toggle: false)
-        self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
-/*
- 
- Fix the fact that clicking team brings it to 2nd viewcontroller and scoring doesnt work, whereas clicking start game makes scoring work but doesnt transfer team data.
- 1. in viewcontroller1 and 3, option to choose team (from scroller)
- 2. load to viewcontroller 2 or 4
- 3. 1 more random number (1-20) is generated each time "turn to page" is clicked
- 4. if out, 2nd rand # comes into play
- 
- BIASES FOR EACH TEAM: (when to roll 1st random # again)
- England: #>10
- India: #>10
- Australia: #>11
- New Zealand: #>12
- South Africa: #>13
- Pakistan: #>14
- Bangladesh: #>15
- Sri Lanka: #>16
- West Indies: #>17
- Afghanistan: #>18
- 
- */
