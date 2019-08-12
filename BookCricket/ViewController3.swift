@@ -13,10 +13,22 @@ class ViewController3: UIViewController, UITextFieldDelegate {
     //MARK: Properties
     @IBOutlet weak var numberOfPages2: UITextField!
     
+    
+    @IBOutlet weak var player1TeamButton: UIButton!
+    @IBOutlet weak var player2TeamButton: UIButton!
+    @IBOutlet weak var tableView1: UITableView!
+    @IBOutlet weak var tableView2: UITableView!
+    
+    var teamList1 = ["India", "England", "Australia", "New Zealand", "South Africa", "Pakistan", "Bangladesh", "Sri Lanka", "West Indies", "Afghanistan"]
+    
+    var teamList2 = ["India", "England", "Australia", "New Zealand", "South Africa", "Pakistan", "Bangladesh", "Sri Lanka", "West Indies", "Afghanistan"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView1.isHidden = true
+        tableView2.isHidden = true
         // Handle the text field’s user input through delegate callbacks
         numberOfPages2.delegate = self
     }
@@ -51,4 +63,91 @@ class ViewController3: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    @IBAction func onClickDropPlayer1(_ sender: Any) {
+        if tableView1.isHidden {
+            animate(toggle: true, type: player1TeamButton)
+        }
+        else {
+            animate(toggle: false, type: player1TeamButton)
+        }
+    }
+    
+    @IBAction func onClickDropPlayer2(_ sender: Any) {
+        if tableView2.isHidden {
+            animate(toggle: true, type: player2TeamButton)
+        }
+        else {
+            animate(toggle: false, type: player2TeamButton)
+        }
+    }
+    
+    func animate(toggle: Bool, type: UIButton) {
+        if type == player1TeamButton {
+            if toggle {
+                UIView.animate(withDuration: 0.3) {
+                    self.tableView1.isHidden = false
+                }
+            }
+            else {
+                UIView.animate(withDuration: 0.3) {
+                    self.tableView1.isHidden = true
+                }
+            }
+        }
+        else {
+            if toggle {
+                UIView.animate(withDuration: 0.3) {
+                    self.tableView2.isHidden = false
+                }
+            }
+            else {
+                UIView.animate(withDuration: 0.3) {
+                    self.tableView2.isHidden = true
+                }
+            }
+        }
+    }
+    
 }
+
+extension ViewController3: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (tableView == tableView1) {
+            return self.teamList1.count
+        }
+        else {
+            return self.teamList2.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (tableView == tableView1) {
+            let cellOne = tableView1.dequeueReusableCell(withIdentifier: "cellPlayer1", for: indexPath) as? Player1TableViewCell
+            cellOne?.player1TeamLabel.text = self.teamList1[indexPath.row]
+            return cellOne!
+        }
+        else {
+            let cellTwo = tableView2.dequeueReusableCell(withIdentifier: "cellPlayer2", for: indexPath) as? Player2TableViewCell
+            cellTwo?.player2TeamLabel.text = self.teamList2[indexPath.row]
+            return cellTwo!
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let vc = storyboard?.instantiateViewController(withIdentifier: "Controller4") as? ViewController4
+        //vc?.name = teamList[indexPath.row]
+        if (tableView == tableView1) {
+            player1TeamButton.setTitle("\(teamList1[indexPath.row])", for: .normal)
+        }
+        else {
+          player2TeamButton.setTitle("\(teamList2[indexPath.row])", for: .normal)
+        }
+        let singleTon = SingletonClass()
+        singleTon.sharedInstance.dataText = "\(teamList1[indexPath.row])"
+        animate(toggle: false, type: player1TeamButton)
+    }
+}
+
+//fix fact that the team that is selected last is what is displayed by singleton. Also make labels for both teams work and finally implement the bias for each player

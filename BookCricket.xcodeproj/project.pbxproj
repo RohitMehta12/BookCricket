@@ -18,6 +18,8 @@
 		E132A93422EB6232009BB210 /* BookCricketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A93322EB6232009BB210 /* BookCricketTests.swift */; };
 		E132A93F22EB6232009BB210 /* BookCricketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A93E22EB6232009BB210 /* BookCricketUITests.swift */; };
 		E132A94D22EB6C48009BB210 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132A94C22EB6C48009BB210 /* ViewController2.swift */; };
+		E17D907B2301F3D80089117D /* Player1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D907A2301F3D80089117D /* Player1TableViewCell.swift */; };
+		E17D907D2301F3E40089117D /* Player2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D907C2301F3E40089117D /* Player2TableViewCell.swift */; };
 		E1F93A3422FB544F0058E396 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F93A3322FB544F0058E396 /* CellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		E132A93E22EB6232009BB210 /* BookCricketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCricketUITests.swift; sourceTree = "<group>"; };
 		E132A94022EB6232009BB210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E132A94C22EB6C48009BB210 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		E17D907A2301F3D80089117D /* Player1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player1TableViewCell.swift; sourceTree = "<group>"; };
+		E17D907C2301F3E40089117D /* Player2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player2TableViewCell.swift; sourceTree = "<group>"; };
 		E1F93A3322FB544F0058E396 /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,8 @@
 			children = (
 				E132A91E22EB6231009BB210 /* AppDelegate.swift */,
 				E132A92022EB6231009BB210 /* ViewController.swift */,
+				E17D907A2301F3D80089117D /* Player1TableViewCell.swift */,
+				E17D907C2301F3E40089117D /* Player2TableViewCell.swift */,
 				E1F93A3322FB544F0058E396 /* CellTableViewCell.swift */,
 				E132A92222EB6231009BB210 /* Main.storyboard */,
 				E116055122F3546200A8DADA /* ViewController4.swift */,
@@ -275,8 +281,10 @@
 				E132A92122EB6231009BB210 /* ViewController.swift in Sources */,
 				E132A91F22EB6231009BB210 /* AppDelegate.swift in Sources */,
 				E116055022F3542B00A8DADA /* ViewController3.swift in Sources */,
+				E17D907D2301F3E40089117D /* Player2TableViewCell.swift in Sources */,
 				E132A94D22EB6C48009BB210 /* ViewController2.swift in Sources */,
 				E116055222F3546200A8DADA /* ViewController4.swift in Sources */,
+				E17D907B2301F3D80089117D /* Player1TableViewCell.swift in Sources */,
 				E1F93A3422FB544F0058E396 /* CellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

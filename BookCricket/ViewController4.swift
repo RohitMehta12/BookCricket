@@ -38,6 +38,10 @@ class ViewController4: UIViewController {
     //"Score" label
     @IBOutlet weak var theScore2: UILabel!
     
+    
+    @IBOutlet weak var teamLabel1: UILabel!
+    @IBOutlet weak var teamLabel2: UILabel!
+    
     var upperBound: Int?
 
     override func viewDidLoad() {
@@ -49,6 +53,8 @@ class ViewController4: UIViewController {
         turnToRandomPage2.addTarget(self, action: #selector(roller2), for: .touchUpInside)
         randomLabel1.text = ""
         randomLabel2.text = ""
+        let singleTon = SingletonClass()
+        teamLabel1.text = "\(singleTon.sharedInstance.dataText)"
     }
     
 
