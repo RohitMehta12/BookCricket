@@ -43,6 +43,8 @@ class ViewController4: UIViewController {
     @IBOutlet weak var teamLabel2: UILabel!
     
     var upperBound: Int?
+    var name1 = ""
+    var name2 = ""
 
     override func viewDidLoad() {
         
@@ -54,7 +56,9 @@ class ViewController4: UIViewController {
         randomLabel1.text = ""
         randomLabel2.text = ""
         let singleTon = SingletonClass()
+        let singleTon2 = SingletonClass2()
         teamLabel1.text = "\(singleTon.sharedInstance.dataText)"
+        teamLabel2.text = "\(singleTon2.sharedInstance.dataText2)"
     }
     
 
@@ -87,10 +91,16 @@ class ViewController4: UIViewController {
         let randomNumber = 2 * (Int.random(in: ((0+1)/2) ... ((upperBound ?? 1)/2)))
         randomLabel1.text = "\(randomNumber)"
         digit1 = randomNumber % 10
+        let probability = probabilityClass()
         
         if digit1 == 0 {
-            wickets1 += 1
-            scoringLabel1.text = "OUT!"
+            if probability.assignProbabilitiesOne() {
+                scoringLabel1.text = "SURVIVES THE APPEAL! \r\n NO RUN"
+            }
+            else {
+                wickets1 = wickets1 + 1
+                scoringLabel1.text = "OUT!"
+            }
         }
         else if digit1 == 8 {
             scoringLabel1.text = "NO RUN"
@@ -128,10 +138,16 @@ class ViewController4: UIViewController {
         let randomNumber = 2 * (Int.random(in: ((0+1)/2) ... ((upperBound ?? 1)/2)))
         randomLabel2.text = "\(randomNumber)"
         digit2 = randomNumber % 10
+        let probability = probabilityClass()
         
         if digit2 == 0 {
-            wickets2 += 1
-            scoringLabel2.text = "OUT!"
+            if probability.assignProbabilitiesTwo() {
+                scoringLabel2.text = "SURVIVES THE APPEAL! \r\n NO RUN"
+            }
+            else {
+                wickets2 = wickets2 + 1
+                scoringLabel2.text = "OUT!"
+            }
         }
         else if digit2 == 8 {
             scoringLabel2.text = "NO RUN"

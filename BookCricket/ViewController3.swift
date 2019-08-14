@@ -136,8 +136,9 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let vc = storyboard?.instantiateViewController(withIdentifier: "Controller4") as? ViewController4
-        //vc?.name = teamList[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Controller4") as? ViewController4
+        vc?.name1 = teamList1[indexPath.row]
+        vc?.name2 = teamList2[indexPath.row]
         if (tableView == tableView1) {
             player1TeamButton.setTitle("\(teamList1[indexPath.row])", for: .normal)
         }
@@ -145,9 +146,13 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
           player2TeamButton.setTitle("\(teamList2[indexPath.row])", for: .normal)
         }
         let singleTon = SingletonClass()
+        let singleTon2 = SingletonClass2()
         singleTon.sharedInstance.dataText = "\(teamList1[indexPath.row])"
+        singleTon2.sharedInstance.dataText2 = "\(teamList2[indexPath.row])"
         animate(toggle: false, type: player1TeamButton)
+        animate(toggle: false, type: player2TeamButton)
     }
 }
 
 //fix fact that the team that is selected last is what is displayed by singleton. Also make labels for both teams work and finally implement the bias for each player
+//make assigning probabilites more efficient than having two functions

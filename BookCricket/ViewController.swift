@@ -93,6 +93,17 @@ class SingletonClass {
         return Static.instance
     }
     var dataText : String = ""
+    
+}
+
+class SingletonClass2 {
+    var sharedInstance: SingletonClass2 {
+        struct Static {
+            static let instance = SingletonClass2()
+        }
+        return Static.instance
+    }
+    var dataText2: String = ""
 }
 
 //for the table of teams
