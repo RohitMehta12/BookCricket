@@ -114,7 +114,7 @@ class ViewController3: UIViewController, UITextFieldDelegate {
 extension ViewController3: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (tableView == tableView1) {
+        if (tableView == self.tableView1) {
             return self.teamList1.count
         }
         else {
@@ -123,22 +123,21 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (tableView == tableView1) {
-            let cellOne = tableView1.dequeueReusableCell(withIdentifier: "cellPlayer1", for: indexPath) as? Player1TableViewCell
-            cellOne?.player1TeamLabel.text = self.teamList1[indexPath.row]
+        let cellOne = tableView1.dequeueReusableCell(withIdentifier: "cellPlayer1", for: indexPath) as? Player1TableViewCell
+        cellOne?.player1TeamLabel.text = self.teamList1[indexPath.row]
+        //this is never called right now
+        let cellTwo = tableView2.dequeueReusableCell(withIdentifier: "cellPlayer2", for: indexPath) as? Player2TableViewCell
+        cellTwo?.player2TeamLabel.text = self.teamList2[indexPath.row]
+        if tableView == tableView1 {
             return cellOne!
         }
-        else {
-            let cellTwo = tableView2.dequeueReusableCell(withIdentifier: "cellPlayer2", for: indexPath) as? Player2TableViewCell
-            cellTwo?.player2TeamLabel.text = self.teamList2[indexPath.row]
+        else if tableView == tableView2 {
             return cellTwo!
         }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "Controller4") as? ViewController4
-        vc?.name1 = teamList1[indexPath.row]
-        vc?.name2 = teamList2[indexPath.row]
         if (tableView == tableView1) {
             player1TeamButton.setTitle("\(teamList1[indexPath.row])", for: .normal)
         }
@@ -147,12 +146,18 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
         }
         let singleTon = SingletonClass()
         let singleTon2 = SingletonClass2()
-        singleTon.sharedInstance.dataText = "\(teamList1[indexPath.row])"
-        singleTon2.sharedInstance.dataText2 = "\(teamList2[indexPath.row])"
+        if (tableView == tableView1) {
+            singleTon.sharedInstance.dataText = "\(teamList1[indexPath.row])"
+        }
+        else if tableView == tableView2 {
+            singleTon2.sharedInstance.dataText2 = "\(teamList2[indexPath.row])"
+        }
+        
         animate(toggle: false, type: player1TeamButton)
         animate(toggle: false, type: player2TeamButton)
     }
 }
 
-//fix fact that the team that is selected last is what is displayed by singleton. Also make labels for both teams work and finally implement the bias for each player
 //make assigning probabilites more efficient than having two functions
+//make playing page more aesthetic and fix layout a bit
+//make endpage aesthetic, fix "player _ wins"
