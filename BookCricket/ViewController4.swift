@@ -57,8 +57,8 @@ class ViewController4: UIViewController {
         randomLabel2.text = ""
         let singleTon = SingletonClass()
         let singleTon2 = SingletonClass2()
-        teamLabel1.text = "\(singleTon.sharedInstance.dataText)"
-        teamLabel2.text = "\(singleTon2.sharedInstance.dataText2)"
+        teamLabel1.text = "Player 1: \(singleTon.sharedInstance.dataText)"
+        teamLabel2.text = "Player 2: \(singleTon2.sharedInstance.dataText2)"
     }
     
 
@@ -94,7 +94,7 @@ class ViewController4: UIViewController {
         let probability = probabilityClass()
         
         if digit1 == 0 {
-            if probability.assignProbabilitiesOne() {
+            if probability.assignProbabilities() {
                 scoringLabel1.text = "SURVIVES THE APPEAL! \r\n NO RUN"
             }
             else {
@@ -141,7 +141,7 @@ class ViewController4: UIViewController {
         let probability = probabilityClass()
         
         if digit2 == 0 {
-            if probability.assignProbabilitiesTwo() {
+            if probability.assignProbabilities() {
                 scoringLabel2.text = "SURVIVES THE APPEAL! \r\n NO RUN"
             }
             else {

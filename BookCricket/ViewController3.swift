@@ -158,6 +158,7 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//make assigning probabilites more efficient than having two functions
 //make playing page more aesthetic and fix layout a bit
 //make endpage aesthetic, fix "player _ wins"
+//make single player playing page more aesthetic
+//change color of button based on team picked

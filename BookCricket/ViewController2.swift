@@ -64,7 +64,7 @@ class ViewController2: UIViewController {
         let probability = probabilityClass()
         
         if digit == 0 {
-            if probability.assignProbabilitiesOne() {
+            if probability.assignProbabilities() {
                 scoringLabel.text = "SURVIVES THE APPEAL! \r\n NO RUN"
             }
             else {
@@ -103,21 +103,41 @@ class ViewController2: UIViewController {
 
 class probabilityClass {
     
-    func assignProbabilitiesOne() -> Bool {
+    func assignProbabilities() -> Bool {
 
         let singleTon = SingletonClass()
+        let singleTon2 = SingletonClass2()
         
-        let randomNumberTwo = (Int.random(in: 0...20))
+        let randomNumberTwoT1 = (Int.random(in: 0...20))
+        let randomNumberTwoT2 = (Int.random(in: 0...20))
+        
         if "\(singleTon.sharedInstance.dataText)" == "England" {
-            if randomNumberTwo <= 10 {
+            if randomNumberTwoT1 <= 10 {
                 return false
             }
             else {
                 return true
             }
         }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "England" {
+            if randomNumberTwoT2 <= 10 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+            
         else if "\(singleTon.sharedInstance.dataText)" == "India" {
-            if randomNumberTwo <= 10 {
+            if randomNumberTwoT1 <= 10 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "India" {
+            if randomNumberTwoT2 <= 10 {
                 return false
             }
             else {
@@ -126,16 +146,32 @@ class probabilityClass {
         }
             
         else if "\(singleTon.sharedInstance.dataText)" == "Australia" {
-            if randomNumberTwo <= 11 {
+            if randomNumberTwoT1 <= 11 {
                 return false
             }
             else {
                 return true
             }
         }
-            
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Australia" {
+            if randomNumberTwoT2 <= 11 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+
+        else if "\(singleTon2.sharedInstance.dataText2)" == "New Zealand" {
+            if randomNumberTwoT2 <= 12 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
         else if "\(singleTon.sharedInstance.dataText)" == "New Zealand" {
-            if randomNumberTwo <= 12 {
+            if randomNumberTwoT1 <= 12 {
                 return false
             }
             else {
@@ -144,7 +180,15 @@ class probabilityClass {
         }
             
         else if "\(singleTon.sharedInstance.dataText)" == "South Africa" {
-            if randomNumberTwo <= 13 {
+            if randomNumberTwoT1 <= 13 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "South Africa" {
+            if randomNumberTwoT2 <= 13 {
                 return false
             }
             else {
@@ -153,7 +197,15 @@ class probabilityClass {
         }
             
         else if "\(singleTon.sharedInstance.dataText)" == "Pakistan" {
-            if randomNumberTwo <= 14 {
+            if randomNumberTwoT1 <= 14 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Pakistan" {
+            if randomNumberTwoT2 <= 14 {
                 return false
             }
             else {
@@ -162,7 +214,15 @@ class probabilityClass {
         }
             
         else if "\(singleTon.sharedInstance.dataText)" == "Bangladesh" {
-            if randomNumberTwo <= 15 {
+            if randomNumberTwoT1 <= 15 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Bangladesh" {
+            if randomNumberTwoT2 <= 15 {
                 return false
             }
             else {
@@ -171,7 +231,15 @@ class probabilityClass {
         }
             
         else if "\(singleTon.sharedInstance.dataText)" == "Sri Lanka" {
-            if randomNumberTwo <= 16 {
+            if randomNumberTwoT1 <= 16 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Sri Lanka" {
+            if randomNumberTwoT2 <= 16 {
                 return false
             }
             else {
@@ -180,7 +248,15 @@ class probabilityClass {
         }
             
         else if "\(singleTon.sharedInstance.dataText)" == "West Indies" {
-            if randomNumberTwo <= 17 {
+            if randomNumberTwoT1 <= 17 {
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "West Indies" {
+            if randomNumberTwoT2 <= 17 {
                 return false
             }
             else {
@@ -189,109 +265,22 @@ class probabilityClass {
         }
             
         else if "\(singleTon.sharedInstance.dataText)" == "Afghanistan" {
-            if randomNumberTwo <= 18 {
+            if randomNumberTwoT1 <= 18 {
                 return false
             }
             else {
                 return true
             }
         }
-        return false
-    }
-    
-    func assignProbabilitiesTwo() -> Bool {
-        
-        let singleTon2 = SingletonClass2()
-        
-        let twoRandomNumberTwo = (Int.random(in: 0...20))
-        if "\(singleTon2.sharedInstance.dataText2)" == "England" {
-            if twoRandomNumberTwo <= 10 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "India" {
-            if twoRandomNumberTwo <= 10 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-            
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Australia" {
-            if twoRandomNumberTwo <= 11 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-            
-        else if "\(singleTon2.sharedInstance.dataText2)" == "New Zealand" {
-            if twoRandomNumberTwo <= 12 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-            
-        else if "\(singleTon2.sharedInstance.dataText2)" == "South Africa" {
-            if twoRandomNumberTwo <= 13 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-            
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Pakistan" {
-            if twoRandomNumberTwo <= 14 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-            
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Bangladesh" {
-            if twoRandomNumberTwo <= 15 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-            
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Sri Lanka" {
-            if twoRandomNumberTwo <= 16 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-            
-        else if "\(singleTon2.sharedInstance.dataText2)" == "West Indies" {
-            if twoRandomNumberTwo <= 17 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
-            
         else if "\(singleTon2.sharedInstance.dataText2)" == "Afghanistan" {
-            if twoRandomNumberTwo <= 18 {
+            if randomNumberTwoT2 <= 18 {
                 return false
             }
             else {
                 return true
             }
         }
+        
         return false
     }
 }

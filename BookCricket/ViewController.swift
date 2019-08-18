@@ -123,6 +123,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard?.instantiateViewController(withIdentifier: "Controller2") as? ViewController2
         vc?.name = teamList[indexPath.row]
         teamButton.setTitle("\(teamList[indexPath.row])", for: .normal)
+        
         let singleTon = SingletonClass()
         singleTon.sharedInstance.dataText = "\(teamList[indexPath.row])"
         animate(toggle: false)
