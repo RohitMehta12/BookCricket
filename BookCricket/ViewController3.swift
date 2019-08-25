@@ -19,6 +19,7 @@ class ViewController3: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tableView1: UITableView!
     @IBOutlet weak var tableView2: UITableView!
     
+    
     var teamList1 = ["India", "England", "Australia", "New Zealand", "South Africa", "Pakistan", "Bangladesh", "Sri Lanka", "West Indies", "Afghanistan"]
     
     var teamList2 = ["India", "England", "Australia", "New Zealand", "South Africa", "Pakistan", "Bangladesh", "Sri Lanka", "West Indies", "Afghanistan"]
@@ -109,6 +110,81 @@ class ViewController3: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func assignColor() {
+        let singleTon = SingletonClass()
+        let singleTon2 = SingletonClass2()
+        
+        if "\(singleTon.sharedInstance.dataText)" == "England" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 182/255, green: 210/255, blue: 231/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "England" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 182/255, green: 210/255, blue: 231/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon.sharedInstance.dataText)" == "India" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 66/255, green: 130/255, blue: 231/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "India" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 66/255, green: 130/255, blue: 231/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon.sharedInstance.dataText)" == "Australia" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 242/255, green: 210/255, blue: 97/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Australia" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 242/255, green: 210/255, blue: 97/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon2.sharedInstance.dataText2)" == "New Zealand" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 49/255, green: 49/255, blue: 43/255, alpha: 0.5)
+        }
+        else if "\(singleTon.sharedInstance.dataText)" == "New Zealand" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 49/255, green: 49/255, blue: 43/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon.sharedInstance.dataText)" == "South Africa" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 1/255, green: 108/255, blue: 88/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "South Africa" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 1/255, green: 108/255, blue: 88/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon.sharedInstance.dataText)" == "Pakistan" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 6/255, green: 113/255, blue: 90/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Pakistan" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 6/255, green: 113/255, blue: 90/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon.sharedInstance.dataText)" == "Bangladesh" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 2/255, green: 137/255, blue: 78/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Bangladesh" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 2/255, green: 137/255, blue: 78/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon.sharedInstance.dataText)" == "Sri Lanka" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 49/255, green: 84/255, blue: 151/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Sri Lanka" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 49/255, green: 84/255, blue: 151/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon.sharedInstance.dataText)" == "West Indies" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 131/255, green: 13/255, blue: 45/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "West Indies" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 131/255, green: 13/255, blue: 45/255, alpha: 0.5)
+        }
+            
+        else if "\(singleTon.sharedInstance.dataText)" == "Afghanistan" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 66/255, green: 117/255, blue: 225/255, alpha: 0.5)
+        }
+        else if "\(singleTon2.sharedInstance.dataText2)" == "Afghanistan" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 66/255, green: 117/255, blue: 225/255, alpha: 0.5)
+        }
+    }
+    
 }
 
 extension ViewController3: UITableViewDelegate, UITableViewDataSource {
@@ -142,15 +218,17 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
             player1TeamButton.setTitle("\(teamList1[indexPath.row])", for: .normal)
         }
         else {
-          player2TeamButton.setTitle("\(teamList2[indexPath.row])", for: .normal)
+            player2TeamButton.setTitle("\(teamList2[indexPath.row])", for: .normal)
         }
         let singleTon = SingletonClass()
         let singleTon2 = SingletonClass2()
         if (tableView == tableView1) {
             singleTon.sharedInstance.dataText = "\(teamList1[indexPath.row])"
+            assignColor()
         }
         else if tableView == tableView2 {
             singleTon2.sharedInstance.dataText2 = "\(teamList2[indexPath.row])"
+            assignColor()
         }
         
         animate(toggle: false, type: player1TeamButton)
@@ -161,4 +239,4 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
 //make playing page more aesthetic and fix layout a bit
 //make endpage aesthetic, fix "player _ wins"
 //make single player playing page more aesthetic
-//change color of button based on team picked
+//fix bugs from changing color of button (tables overlap, sometimes color doesnt change
