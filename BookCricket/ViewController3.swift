@@ -117,70 +117,70 @@ class ViewController3: UIViewController, UITextFieldDelegate {
         if "\(singleTon.sharedInstance.dataText)" == "England" {
             self.player1TeamButton.backgroundColor = UIColor(red: 182/255, green: 210/255, blue: 231/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "England" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "England" {
             self.player2TeamButton.backgroundColor = UIColor(red: 182/255, green: 210/255, blue: 231/255, alpha: 0.5)
         }
             
-        else if "\(singleTon.sharedInstance.dataText)" == "India" {
+        if "\(singleTon.sharedInstance.dataText)" == "India" {
             self.player1TeamButton.backgroundColor = UIColor(red: 66/255, green: 130/255, blue: 231/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "India" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "India" {
             self.player2TeamButton.backgroundColor = UIColor(red: 66/255, green: 130/255, blue: 231/255, alpha: 0.5)
         }
             
-        else if "\(singleTon.sharedInstance.dataText)" == "Australia" {
+        if "\(singleTon.sharedInstance.dataText)" == "Australia" {
             self.player1TeamButton.backgroundColor = UIColor(red: 242/255, green: 210/255, blue: 97/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Australia" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "Australia" {
             self.player2TeamButton.backgroundColor = UIColor(red: 242/255, green: 210/255, blue: 97/255, alpha: 0.5)
         }
             
-        else if "\(singleTon2.sharedInstance.dataText2)" == "New Zealand" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "New Zealand" {
             self.player2TeamButton.backgroundColor = UIColor(red: 49/255, green: 49/255, blue: 43/255, alpha: 0.5)
         }
-        else if "\(singleTon.sharedInstance.dataText)" == "New Zealand" {
+        if "\(singleTon.sharedInstance.dataText)" == "New Zealand" {
             self.player1TeamButton.backgroundColor = UIColor(red: 49/255, green: 49/255, blue: 43/255, alpha: 0.5)
         }
             
-        else if "\(singleTon.sharedInstance.dataText)" == "South Africa" {
+        if "\(singleTon.sharedInstance.dataText)" == "South Africa" {
             self.player1TeamButton.backgroundColor = UIColor(red: 1/255, green: 108/255, blue: 88/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "South Africa" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "South Africa" {
             self.player2TeamButton.backgroundColor = UIColor(red: 1/255, green: 108/255, blue: 88/255, alpha: 0.5)
         }
             
-        else if "\(singleTon.sharedInstance.dataText)" == "Pakistan" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 6/255, green: 113/255, blue: 90/255, alpha: 0.5)
+        if "\(singleTon.sharedInstance.dataText)" == "Pakistan" {
+            self.player1TeamButton.backgroundColor = UIColor(red: 6/255, green: 120/255, blue: 90/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Pakistan" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 6/255, green: 113/255, blue: 90/255, alpha: 0.5)
+        if "\(singleTon2.sharedInstance.dataText2)" == "Pakistan" {
+            self.player2TeamButton.backgroundColor = UIColor(red: 6/255, green: 120/255, blue: 90/255, alpha: 0.5)
         }
             
-        else if "\(singleTon.sharedInstance.dataText)" == "Bangladesh" {
+        if "\(singleTon.sharedInstance.dataText)" == "Bangladesh" {
             self.player1TeamButton.backgroundColor = UIColor(red: 2/255, green: 137/255, blue: 78/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Bangladesh" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "Bangladesh" {
             self.player2TeamButton.backgroundColor = UIColor(red: 2/255, green: 137/255, blue: 78/255, alpha: 0.5)
         }
             
-        else if "\(singleTon.sharedInstance.dataText)" == "Sri Lanka" {
+        if "\(singleTon.sharedInstance.dataText)" == "Sri Lanka" {
             self.player1TeamButton.backgroundColor = UIColor(red: 49/255, green: 84/255, blue: 151/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Sri Lanka" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "Sri Lanka" {
             self.player2TeamButton.backgroundColor = UIColor(red: 49/255, green: 84/255, blue: 151/255, alpha: 0.5)
         }
             
-        else if "\(singleTon.sharedInstance.dataText)" == "West Indies" {
+        if "\(singleTon.sharedInstance.dataText)" == "West Indies" {
             self.player1TeamButton.backgroundColor = UIColor(red: 131/255, green: 13/255, blue: 45/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "West Indies" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "West Indies" {
             self.player2TeamButton.backgroundColor = UIColor(red: 131/255, green: 13/255, blue: 45/255, alpha: 0.5)
         }
             
-        else if "\(singleTon.sharedInstance.dataText)" == "Afghanistan" {
+        if "\(singleTon.sharedInstance.dataText)" == "Afghanistan" {
             self.player1TeamButton.backgroundColor = UIColor(red: 66/255, green: 117/255, blue: 225/255, alpha: 0.5)
         }
-        else if "\(singleTon2.sharedInstance.dataText2)" == "Afghanistan" {
+        if "\(singleTon2.sharedInstance.dataText2)" == "Afghanistan" {
             self.player2TeamButton.backgroundColor = UIColor(red: 66/255, green: 117/255, blue: 225/255, alpha: 0.5)
         }
     }
@@ -239,4 +239,3 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
 //make playing page more aesthetic and fix layout a bit
 //make endpage aesthetic, fix "player _ wins"
 //make single player playing page more aesthetic
-//fix bugs from changing color of button (tables overlap, sometimes color doesnt change
