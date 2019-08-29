@@ -110,78 +110,89 @@ class ViewController3: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func assignColor() {
+    
+    func assignColor(typeOfButton: UIButton) {
         let singleTon = SingletonClass()
         let singleTon2 = SingletonClass2()
-        
+        let type: UIButton = typeOfButton
         if "\(singleTon.sharedInstance.dataText)" == "England" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 182/255, green: 210/255, blue: 231/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 182/255, green: 210/255, blue: 231/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "England" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 182/255, green: 210/255, blue: 231/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 182/255, green: 210/255, blue: 231/255, alpha: 0.5)
         }
             
         if "\(singleTon.sharedInstance.dataText)" == "India" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 66/255, green: 130/255, blue: 231/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 66/255, green: 130/255, blue: 231/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "India" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 66/255, green: 130/255, blue: 231/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 66/255, green: 130/255, blue: 231/255, alpha: 0.5)
         }
             
         if "\(singleTon.sharedInstance.dataText)" == "Australia" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 242/255, green: 210/255, blue: 97/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 242/255, green: 210/255, blue: 97/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "Australia" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 242/255, green: 210/255, blue: 97/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 242/255, green: 210/255, blue: 97/255, alpha: 0.5)
         }
             
-        if "\(singleTon2.sharedInstance.dataText2)" == "New Zealand" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 49/255, green: 49/255, blue: 43/255, alpha: 0.5)
-        }
         if "\(singleTon.sharedInstance.dataText)" == "New Zealand" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 49/255, green: 49/255, blue: 43/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 49/255, green: 49/255, blue: 43/255, alpha: 0.5)
+        }
+        
+        if "\(singleTon2.sharedInstance.dataText2)" == "New Zealand" {
+            type.backgroundColor = UIColor(red: 49/255, green: 49/255, blue: 43/255, alpha: 0.5)
         }
             
         if "\(singleTon.sharedInstance.dataText)" == "South Africa" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 1/255, green: 108/255, blue: 88/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 1/255, green: 108/255, blue: 88/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "South Africa" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 1/255, green: 108/255, blue: 88/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 1/255, green: 108/255, blue: 88/255, alpha: 0.5)
         }
             
         if "\(singleTon.sharedInstance.dataText)" == "Pakistan" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 6/255, green: 120/255, blue: 90/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 6/255, green: 120/255, blue: 90/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "Pakistan" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 6/255, green: 120/255, blue: 90/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 6/255, green: 120/255, blue: 90/255, alpha: 0.5)
         }
             
         if "\(singleTon.sharedInstance.dataText)" == "Bangladesh" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 2/255, green: 137/255, blue: 78/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 2/255, green: 137/255, blue: 78/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "Bangladesh" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 2/255, green: 137/255, blue: 78/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 2/255, green: 137/255, blue: 78/255, alpha: 0.5)
         }
             
         if "\(singleTon.sharedInstance.dataText)" == "Sri Lanka" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 49/255, green: 84/255, blue: 151/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 49/255, green: 84/255, blue: 151/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "Sri Lanka" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 49/255, green: 84/255, blue: 151/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 49/255, green: 84/255, blue: 151/255, alpha: 0.5)
         }
             
         if "\(singleTon.sharedInstance.dataText)" == "West Indies" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 131/255, green: 13/255, blue: 45/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 131/255, green: 13/255, blue: 45/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "West Indies" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 131/255, green: 13/255, blue: 45/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 131/255, green: 13/255, blue: 45/255, alpha: 0.5)
         }
             
         if "\(singleTon.sharedInstance.dataText)" == "Afghanistan" {
-            self.player1TeamButton.backgroundColor = UIColor(red: 66/255, green: 117/255, blue: 225/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 66/255, green: 117/255, blue: 225/255, alpha: 0.5)
         }
+        
         if "\(singleTon2.sharedInstance.dataText2)" == "Afghanistan" {
-            self.player2TeamButton.backgroundColor = UIColor(red: 66/255, green: 117/255, blue: 225/255, alpha: 0.5)
+            type.backgroundColor = UIColor(red: 66/255, green: 117/255, blue: 225/255, alpha: 0.5)
         }
     }
     
@@ -201,7 +212,6 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellOne = tableView1.dequeueReusableCell(withIdentifier: "cellPlayer1", for: indexPath) as? Player1TableViewCell
         cellOne?.player1TeamLabel.text = self.teamList1[indexPath.row]
-        //this is never called right now
         let cellTwo = tableView2.dequeueReusableCell(withIdentifier: "cellPlayer2", for: indexPath) as? Player2TableViewCell
         cellTwo?.player2TeamLabel.text = self.teamList2[indexPath.row]
         if tableView == tableView1 {
@@ -224,11 +234,11 @@ extension ViewController3: UITableViewDelegate, UITableViewDataSource {
         let singleTon2 = SingletonClass2()
         if (tableView == tableView1) {
             singleTon.sharedInstance.dataText = "\(teamList1[indexPath.row])"
-            assignColor()
+            assignColor(typeOfButton: player1TeamButton)
         }
-        else if tableView == tableView2 {
+        else if (tableView == tableView2) {
             singleTon2.sharedInstance.dataText2 = "\(teamList2[indexPath.row])"
-            assignColor()
+            assignColor(typeOfButton: player2TeamButton)
         }
         
         animate(toggle: false, type: player1TeamButton)

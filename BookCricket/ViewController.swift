@@ -126,6 +126,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let singleTon = SingletonClass()
         singleTon.sharedInstance.dataText = "\(teamList[indexPath.row])"
+        let thirdView = ViewController3()
+        thirdView.assignColor(typeOfButton: teamButton)
         animate(toggle: false)
     }
 }
