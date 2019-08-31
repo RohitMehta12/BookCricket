@@ -203,12 +203,16 @@ class ViewController4: UIViewController {
             else {
                 vc.finalStatement = "Player \(winningPlayer) wins by \(winningScore - losingScore) runs!"
             }
-            self.present(vc, animated: true, completion: nil)
+            vc.modalTransitionStyle = .crossDissolve
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.present(vc, animated: true, completion: nil)
+            }
         }
     }
 
 }
+
 //add to the functionality for displaying winner
 //add functionality to select team (preset team of 11). Start out with showing who two are batting, show best partnerships at the end. Table is too hard atm
 //add overs
-//FOCUS ON THIS 1ST bias: generate 1 more random #, 1-20. Check ranking of team. Eg: if team ranking is 10, if the 2nd rand # is more than 18, try one more time if out. 10% of time they will get one more chance, roll 1st random thing again
+//add functionality for wins by wickets if one of the players finishes batting first
