@@ -81,7 +81,9 @@ class ViewController4: UIViewController {
     var score2: Int = 0
     var wickets2: Int = 0
     
+    var winningPlayer:Int = 0
     var winningScore:Int = 0
+    var losingScore:Int = 0
     var wicketCheckerCount: Int = 0
     
     //MARK: Player 1 logic
@@ -183,7 +185,24 @@ class ViewController4: UIViewController {
             //transit to final page
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EndViewController") as! EndViewController
             winningScore = max(score1, score2)
-            vc.scoreData = "\(winningScore)"
+            losingScore = min(score1, score2)
+            if winningScore == score1 {
+                winningPlayer = 1
+            }
+            else if winningScore == losingScore {
+                winningPlayer = 0
+            }
+            else {
+                winningPlayer = 2
+            }
+            vc.player1Score = "Player 1: \(score1) all out"
+            vc.player2Score = "Player 2: \(score2) all out"
+            if winningPlayer == 0 {
+                vc.finalStatement = "Player 1 has tied with Player 2!"
+            }
+            else {
+                vc.finalStatement = "Player \(winningPlayer) wins by \(winningScore - losingScore) runs!"
+            }
             self.present(vc, animated: true, completion: nil)
         }
     }

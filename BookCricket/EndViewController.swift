@@ -11,10 +11,16 @@ import UIKit
 class EndViewController: UIViewController {
 
     @IBOutlet weak var winningScore: UILabel!
-    var scoreData:String!
+    @IBOutlet weak var player1ScoreLabel: UILabel!
+    @IBOutlet weak var player2ScoreLabel: UILabel!
+    var player1Score:String!
+    var player2Score:String!
+    var finalStatement:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        winningScore.text = scoreData
+        winningScore.text = finalStatement
+        player1ScoreLabel.text = player1Score
+        player2ScoreLabel.text = player2Score
 
         // Do any additional setup after loading the view.
     }
