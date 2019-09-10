@@ -55,6 +55,8 @@ class ViewController4: UIViewController {
         turnToRandomPage2.addTarget(self, action: #selector(roller2), for: .touchUpInside)
         randomLabel1.text = ""
         randomLabel2.text = ""
+        turnToRandomPage1.layer.cornerRadius = 4
+        turnToRandomPage2.layer.cornerRadius = 4
         let singleTon = SingletonClass()
         let singleTon2 = SingletonClass2()
         teamLabel1.text = "Player 1: \(singleTon.sharedInstance.dataText)"

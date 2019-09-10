@@ -35,6 +35,8 @@ class ViewController2: UIViewController {
         turnToRandomPage.addTarget(self, action: #selector(roller), for: .touchUpInside)
         randomLabel.text = ""
         returnButton.isHidden = true
+        turnToRandomPage.layer.cornerRadius = 4
+        returnButton.layer.cornerRadius = 4
         let singleTon = SingletonClass()
         teamLabel.text = "\(singleTon.sharedInstance.dataText)"
     }

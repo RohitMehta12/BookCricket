@@ -142,6 +142,11 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="pux-RI-AJd" kind="show" identifier="segue1" id="1FO-9A-fcn"/>
                                 </connections>
@@ -197,17 +202,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xev-Jo-NEE">
-                                <rect key="frame" x="168" y="691" width="78" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="Kev-h8-E3M"/>
-                                    <constraint firstAttribute="height" constant="30" id="ntq-ti-euK"/>
-                                </constraints>
-                                <state key="normal" title="Start Game"/>
-                                <connections>
-                                    <segue destination="bMZ-jb-ru3" kind="show" identifier="segue2" id="fZT-dE-eD7"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input number of pages in book" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vbj-uh-z0z">
                                 <rect key="frame" x="110" y="140" width="194" height="30"/>
                                 <constraints>
@@ -219,12 +213,8 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJE-Eo-MJ4">
-                                <rect key="frame" x="20" y="730" width="374" height="118"/>
+                                <rect key="frame" x="20" y="729" width="374" height="119"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="Nxz-8i-fCF"/>
-                                    <constraint firstAttribute="height" constant="118" id="gNw-lB-W10"/>
-                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="How to Play">
                                         <attributes>
@@ -260,13 +250,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McQ-ls-ha4">
-                                <rect key="frame" x="176.5" y="200" width="61.5" height="20.5"/>
+                                <rect key="frame" x="177.5" y="200" width="59" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1i-aV-ZaF">
-                                <rect key="frame" x="176.5" y="447.5" width="61.5" height="20.5"/>
+                                <rect key="frame" x="177.5" y="447.5" width="61.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -325,7 +315,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Vt8-2e-62Z">
-                                <rect key="frame" x="35" y="476" width="344" height="194"/>
+                                <rect key="frame" x="35" y="475" width="344" height="194"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMX-xA-6fu">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="40"/>
@@ -376,33 +366,49 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xev-Jo-NEE">
+                                <rect key="frame" x="140" y="691" width="134" height="30"/>
+                                <color key="backgroundColor" red="0.64500595029999996" green="0.0" blue="0.01558996895" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="bMZ-jb-ru3" kind="show" identifier="segue2" id="fZT-dE-eD7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vbj-uh-z0z" firstAttribute="leading" secondItem="UJp-UZ-IqY" secondAttribute="leading" constant="110" id="1Wy-LE-3up"/>
+                            <constraint firstItem="Vt8-2e-62Z" firstAttribute="centerX" secondItem="56p-Ye-nli" secondAttribute="centerX" id="2NS-I2-Y7L"/>
                             <constraint firstItem="McQ-ls-ha4" firstAttribute="top" secondItem="Vbj-uh-z0z" secondAttribute="bottom" constant="30" id="3YM-Bv-X36"/>
+                            <constraint firstItem="Vt8-2e-62Z" firstAttribute="trailing" secondItem="6u2-dw-49V" secondAttribute="trailing" id="3mM-yC-9a1"/>
                             <constraint firstItem="McQ-ls-ha4" firstAttribute="centerX" secondItem="Vbj-uh-z0z" secondAttribute="centerX" id="7b8-r2-udS"/>
-                            <constraint firstItem="6u2-dw-49V" firstAttribute="leading" secondItem="Vt8-2e-62Z" secondAttribute="leading" id="7uI-0z-NPS"/>
-                            <constraint firstItem="Vt8-2e-62Z" firstAttribute="centerX" secondItem="hJE-Eo-MJ4" secondAttribute="centerX" id="84t-vi-Nzc"/>
                             <constraint firstItem="Vbj-uh-z0z" firstAttribute="top" secondItem="56p-Ye-nli" secondAttribute="bottom" constant="20" id="8th-li-HeL"/>
-                            <constraint firstItem="UJp-UZ-IqY" firstAttribute="trailing" secondItem="xev-Jo-NEE" secondAttribute="trailing" constant="168" id="9i5-4b-zl8"/>
                             <constraint firstItem="56p-Ye-nli" firstAttribute="top" secondItem="UJp-UZ-IqY" secondAttribute="top" constant="5" id="CG6-QW-CK6"/>
                             <constraint firstItem="Y1i-aV-ZaF" firstAttribute="top" secondItem="6u2-dw-49V" secondAttribute="bottom" constant="21" id="G88-EF-Ro7"/>
-                            <constraint firstItem="UJp-UZ-IqY" firstAttribute="bottom" secondItem="hJE-Eo-MJ4" secondAttribute="bottom" constant="14" id="GPC-iV-sC5"/>
-                            <constraint firstItem="UJp-UZ-IqY" firstAttribute="trailing" secondItem="hJE-Eo-MJ4" secondAttribute="trailing" constant="20" id="GUy-an-pmR"/>
                             <constraint firstItem="UJp-UZ-IqY" firstAttribute="trailing" secondItem="Vbj-uh-z0z" secondAttribute="trailing" constant="110" id="H81-8K-qmE"/>
+                            <constraint firstItem="Vt8-2e-62Z" firstAttribute="centerX" secondItem="Vbj-uh-z0z" secondAttribute="centerX" id="KLf-pg-vbH"/>
                             <constraint firstItem="6u2-dw-49V" firstAttribute="leading" secondItem="UJp-UZ-IqY" secondAttribute="leading" constant="35" id="NlD-ei-Mun"/>
-                            <constraint firstItem="6u2-dw-49V" firstAttribute="centerX" secondItem="hJE-Eo-MJ4" secondAttribute="centerX" id="Q6q-iv-m6G"/>
                             <constraint firstItem="UJp-UZ-IqY" firstAttribute="trailing" secondItem="56p-Ye-nli" secondAttribute="trailing" constant="111" id="QFp-1h-Z7d"/>
-                            <constraint firstItem="Vt8-2e-62Z" firstAttribute="top" secondItem="Y1i-aV-ZaF" secondAttribute="bottom" constant="8" symbolic="YES" id="V1A-kw-4ya"/>
-                            <constraint firstItem="xev-Jo-NEE" firstAttribute="top" secondItem="Vt8-2e-62Z" secondAttribute="bottom" constant="21" id="VNi-s4-Ozi"/>
+                            <constraint firstItem="xev-Jo-NEE" firstAttribute="top" secondItem="Vt8-2e-62Z" secondAttribute="bottom" constant="22" id="WNR-zo-Rn8"/>
                             <constraint firstItem="6u2-dw-49V" firstAttribute="top" secondItem="McQ-ls-ha4" secondAttribute="bottom" constant="8" symbolic="YES" id="WST-4e-02c"/>
-                            <constraint firstItem="Y1i-aV-ZaF" firstAttribute="centerX" secondItem="hJE-Eo-MJ4" secondAttribute="centerX" id="eaf-Ki-1Fv"/>
-                            <constraint firstItem="McQ-ls-ha4" firstAttribute="centerX" secondItem="hJE-Eo-MJ4" secondAttribute="centerX" id="g8a-7w-SIV"/>
+                            <constraint firstItem="Vt8-2e-62Z" firstAttribute="top" secondItem="Y1i-aV-ZaF" secondAttribute="bottom" constant="7" id="ZTq-p1-AZt"/>
+                            <constraint firstItem="hJE-Eo-MJ4" firstAttribute="leading" secondItem="VWA-BY-Qgd" secondAttribute="leadingMargin" id="fE8-VU-5E3"/>
                             <constraint firstItem="McQ-ls-ha4" firstAttribute="leading" secondItem="Y1i-aV-ZaF" secondAttribute="leading" id="ivZ-Og-8dB"/>
                             <constraint firstItem="56p-Ye-nli" firstAttribute="leading" secondItem="UJp-UZ-IqY" secondAttribute="leading" constant="111" id="k1X-Dq-d61"/>
-                            <constraint firstItem="hJE-Eo-MJ4" firstAttribute="leading" secondItem="UJp-UZ-IqY" secondAttribute="leading" constant="20" id="nHi-8k-nOh"/>
-                            <constraint firstItem="xev-Jo-NEE" firstAttribute="leading" secondItem="UJp-UZ-IqY" secondAttribute="leading" constant="168" id="qRW-lS-d7y"/>
+                            <constraint firstItem="Vt8-2e-62Z" firstAttribute="centerX" secondItem="xev-Jo-NEE" secondAttribute="centerX" id="lMw-HS-Td4"/>
+                            <constraint firstItem="xev-Jo-NEE" firstAttribute="leading" secondItem="UJp-UZ-IqY" secondAttribute="leading" constant="140" id="mkj-6J-gh7"/>
+                            <constraint firstItem="UJp-UZ-IqY" firstAttribute="bottom" secondItem="hJE-Eo-MJ4" secondAttribute="bottom" constant="14" id="qKq-yP-3ln"/>
+                            <constraint firstItem="hJE-Eo-MJ4" firstAttribute="top" secondItem="xev-Jo-NEE" secondAttribute="bottom" constant="8" symbolic="YES" id="qca-5m-2ut"/>
+                            <constraint firstItem="xev-Jo-NEE" firstAttribute="centerX" secondItem="hJE-Eo-MJ4" secondAttribute="centerX" id="t1u-FD-OLv"/>
+                            <constraint firstItem="Vt8-2e-62Z" firstAttribute="leading" secondItem="6u2-dw-49V" secondAttribute="leading" id="u0j-Yy-aJB"/>
+                            <constraint firstItem="UJp-UZ-IqY" firstAttribute="trailing" secondItem="hJE-Eo-MJ4" secondAttribute="trailing" constant="40" id="wOn-gw-jvp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UJp-UZ-IqY"/>
                     </view>

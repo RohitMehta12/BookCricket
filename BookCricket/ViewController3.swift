@@ -30,6 +30,8 @@ class ViewController3: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         tableView1.isHidden = true
         tableView2.isHidden = true
+        player1TeamButton.layer.cornerRadius = 4
+        player2TeamButton.layer.cornerRadius = 4
         // Handle the text field’s user input through delegate callbacks
         numberOfPages2.delegate = self
     }
