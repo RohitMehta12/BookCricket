@@ -7,7 +7,7 @@
 //ANYTIME YOU GET SIGBRT ERROR GO TO MAIN.STORYBOARD AND TWOCLICK ON VIEWCONTROLLER, REMOVE ERRORS
 
 import UIKit
-
+//test
 class ViewController2: UIViewController {
     //Button to go to random page
     @IBOutlet weak var turnToRandomPage: UIButton!

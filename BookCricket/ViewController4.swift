@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController4: UIViewController {
+    //test
     //Player1
     
     //Button to go to random page
